@@ -94,7 +94,7 @@ Font: [Cinzel Decorative](https://fonts.google.com/specimen/Cinzel+Decorative), 
 
 ## 📄 Licenza
 
-Progetto creato per uso personale/educativo. Tutti i diritti riservati.
+Distribuito sotto licenza Apache 2.0. Vedi il file [`LICENSE`](LICENSE) per i dettagli.
 
 ---
 
