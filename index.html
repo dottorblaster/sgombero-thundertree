@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1a12">
+  <meta name="description" content="Sgombero a Thundertree - Il diario di Venomfang, alla voce Seccature.">
+  <title>Sgombero a Thundertree</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <!-- Canvas di gioco -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Home Screen -->
+    <div id="uiHome" class="ui-screen">
+      <h1 class="home-title">Sgombero a Thundertree</h1>
+      <p class="home-subtitle">Il diario di Venomfang, alla voce <em>Seccature</em>.</p>
+      <div class="home-best">
+        Miglior punteggio: <strong id="bestDisplay">0</strong>
+      </div>
+      <button id="btnStart" class="btn">Inizia</button>
+    </div>
+
+    <!-- Intro Screen -->
+    <div id="uiIntro" class="ui-screen">
+      <div class="intro-box">
+        <p id="introText"></p>
+      </div>
+      <button id="btnIntroContinue" class="btn">Continua</button>
+    </div>
+
+    <!-- HUD -->
+    <div id="uiHud">
+      <div class="hud-top">
+        <!-- Riga 1: Hoard + Score -->
+        <div class="hud-row">
+          <div class="hud-hoard">
+            <div class="hoard-label">Hoard</div>
+            <div class="hoard-bar">
+              <div id="hoardFill" class="hoard-fill"></div>
+            </div>
+          </div>
+          <div class="hud-score">
+            <div class="score-label">Punteggio</div>
+            <div id="scoreDisplay" class="score-value">0</div>
+            <div class="score-best">Best: <span id="bestDisplayHud">0</span></div>
+          </div>
+        </div>
+
+        <!-- Riga 2: Wave/Act + Combo + Breath -->
+        <div class="hud-wave">
+          <div class="wave-info">
+            <div id="waveDisplay" class="wave-badge">Ondata 1</div>
+            <div id="actDisplay" class="act-badge">Atto I</div>
+          </div>
+          <div id="comboDisplay" class="combo-display">×1.0</div>
+        </div>
+
+        <!-- Riga 3: Breath -->
+        <div class="hud-breath">
+          <div class="breath-label">Soffio Velenoso</div>
+          <div class="breath-bar">
+            <div id="breathFill" class="breath-fill"></div>
+          </div>
+          <button id="btnBreath" class="btn btn-breath" disabled>Usa</button>
+        </div>
+      </div>
+
+      <!-- Dialogue box (in-game) -->
+      <div id="dialogueBox" class="ui-dialogue"></div>
+    </div>
+
+    <!-- Intermission Screen -->
+    <div id="uiIntermission" class="ui-screen">
+      <h2 id="intermissionTitle" class="intermission-title"></h2>
+      <p id="intermissionText" class="intermission-text"></p>
+    </div>
+
+    <!-- Victory Screen -->
+    <div id="uiVictory" class="ui-screen">
+      <h2 class="end-title">Vittoria!</h2>
+      <p class="end-text">
+        Respinti tutti. Scaglie lucide, lista aggiornata, tesoro intatto. La monaca ha imparato a parare il fuoco? No. Ma ci ha provato. Apprezzo lo sforzo. Ora sciò.
+      </p>
+      <div class="end-score">
+        Punteggio finale:
+        <strong id="victoryScore">0</strong>
+      </div>
+      <div class="end-buttons">
+        <button id="btnRestartVictory" class="btn">Rigioca</button>
+        <button id="btnHomeVictory" class="btn">Home</button>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="uiGameOver" class="ui-screen">
+      <h2 class="end-title">Game Over</h2>
+      <p class="end-text">
+        Mi hanno svuotato l'hoard. Conto le monete rimaste: zero. Un numero tondo, almeno. Riprovo appena recupero la dignità.
+      </p>
+      <div class="end-score">
+        Punteggio:
+        <strong id="gameOverScore">0</strong>
+      </div>
+      <div class="end-buttons">
+        <button id="btnRestartGameover" class="btn">Riprova</button>
+        <button id="btnHomeGameover" class="btn">Home</button>
+      </div>
+    </div>
+
+    <!-- Dialogue overlay (bottom) -->
+    <div id="uiDialogue"></div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
