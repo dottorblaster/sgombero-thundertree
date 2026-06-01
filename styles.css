@@ -406,16 +406,16 @@ body {
   justify-content: center;
 }
 
-/* --- Dialogue Box --- */
-#uiDialogue {
+/* --- Dialogue Box (bottom popup) --- */
+#dialogueBox {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 700px;
+  max-width: 600px;
   width: 90%;
-  padding: 20px 25px;
-  background: rgba(30, 28, 22, 0.95);
+  padding: 16px 24px;
+  background: rgba(26, 24, 18, 0.95);
   border: 2px solid var(--accent-gold);
   border-radius: 8px;
   font-size: 1.05rem;
@@ -425,7 +425,8 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
-  z-index: 20;
+  z-index: 999;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
 }
 
 /* --- Mobile Adjustments --- */
@@ -460,10 +461,11 @@ body {
     font-size: 1rem;
   }
 
-  #uiDialogue {
+  #dialogueBox {
     font-size: 0.95rem;
-    padding: 15px 18px;
+    padding: 12px 18px;
     bottom: 20px;
+    max-width: 500px;
   }
 }
 

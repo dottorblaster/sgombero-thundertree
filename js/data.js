@@ -139,10 +139,14 @@ export const WAVES = [
     spawnInterval: 2.2,
     maxActive: 2,
     pool: [
-      { type: 'avventuriero', weight: 0.8 },
-      { type: 'goblin', weight: 0.2 },
+      { type: 'avventuriero', weight: 0.5 },
+      { type: 'goblin', weight: 0.25 },
+      { type: 'cultista', weight: 0.15 },
+      { type: 'cespuglio', weight: 0.1 },
     ],
-    durationMultiplier: 1.2, // intrusi visibili più a lungo
+    durationMultiplier: 1.2,
+    boss: 'rakuzen',
+    bossCount: 1,
   },
   {
     act: 1,

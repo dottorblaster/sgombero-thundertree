@@ -124,7 +124,6 @@ const uiHud = document.getElementById('uiHud');
 const uiIntermission = document.getElementById('uiIntermission');
 const uiVictory = document.getElementById('uiVictory');
 const uiGameOver = document.getElementById('uiGameOver');
-const uiDialogue = document.getElementById('uiDialogue');
 
 const btnStart = document.getElementById('btnStart');
 const btnBreath = document.getElementById('btnBreath');
