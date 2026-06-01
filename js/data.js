@@ -13,6 +13,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 2.0, // secondi base
     color: '#b08050',
     emoji: '🗡️',
+    sprite: 'avventuriero',
     description: 'base',
   },
   goblin: {
@@ -24,6 +25,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 1.2, // molto veloce
     color: '#50a030',
     emoji: '👺',
+    sprite: 'goblin',
     description: 'veloce',
   },
   nonmorto: {
@@ -35,6 +37,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 3.0, // lento
     color: '#7070a0',
     emoji: '💀',
+    sprite: 'nonmorto',
     description: 'lento, 2 tap',
   },
   cultista: {
@@ -47,6 +50,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 1.8,
     color: '#c0a020',
     emoji: '🐉',
+    sprite: 'cultista',
     description: 'bonus',
   },
   cespuglio: {
@@ -58,6 +62,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 1.0, // molto raro e veloce
     color: '#206020',
     emoji: '🌿',
+    sprite: 'cespuglio',
     description: 'easter egg',
     spawnWeight: 0.03, // probabilità molto bassa
   },
@@ -73,6 +78,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 2.2,
     color: '#d06030',
     emoji: '👊',
+    sprite: 'rakuzen',
     description: 'pugno devastante',
     isBoss: true,
   },
@@ -86,6 +92,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 2.5,
     color: '#8040c0',
     emoji: '🎵',
+    sprite: 'giggin',
     description: 'canto: accorcia visibleDuration degli altri',
     isBoss: true,
     songMultiplier: 0.65, // gli altri intrusi durano il 65% del normale
@@ -100,6 +107,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 2.8,
     color: '#404060',
     emoji: '☠️',
+    sprite: 'nour',
     description: 'evoca non-morti ogni ~1.5s',
     isBoss: true,
     summonInterval: 1.5,
@@ -114,6 +122,7 @@ export const INTRUDER_TYPES = {
     visibleDuration: 2.5,
     color: '#c0c0e0',
     emoji: '🛡️',
+    sprite: 'elariel',
     description: 'scuda Nour',
     isBoss: true,
   },

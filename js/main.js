@@ -29,6 +29,28 @@ import {
 
 const C = GAME_CONSTANTS;
 
+// --- Sprite loading ---
+const sprites = new Map();
+
+function loadSprites() {
+  const types = Object.values(INTRUDER_TYPES);
+  for (const type of types) {
+    if (!type.sprite) continue;
+    const img = new Image();
+    img.src = `js/sprites/${type.sprite}.png`;
+    img.onload = () => { sprites.set(type.id, img); };
+    // Fallback: se non carica, si usa l'emoji
+    img.onerror = () => console.warn(`Sprite non trovata: ${type.sprite}.png`);
+  }
+
+  // Carica anche venomfang per la home
+  const vf = new Image();
+  vf.src = 'js/sprites/venomfang.png';
+  vf.onload = () => { sprites.set('venomfang', vf); };
+}
+
+loadSprites();
+
 // --- Canvas setup ---
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
@@ -384,18 +406,24 @@ function renderIntruders() {
       ctx.fillRect(-HOLE_RADIUS, -HOLE_RADIUS, HOLE_RADIUS * 2, HOLE_RADIUS * 2);
     }
 
-    // Corpo intruso
-    const color = intruder.typeDef.color;
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(0, 0, HOLE_RADIUS * 0.6, 0, Math.PI * 2);
-    ctx.fill();
+    // Sprite o fallback emoji
+    const sprite = sprites.get(intruder.typeId);
+    if (sprite && sprite.complete && sprite.naturalWidth > 0) {
+      const size = HOLE_RADIUS * 1.4;
+      ctx.drawImage(sprite, -size / 2, -size / 2, size, size);
+    } else {
+      // Fallback: corpo colorato + emoji
+      const color = intruder.typeDef.color;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(0, 0, HOLE_RADIUS * 0.6, 0, Math.PI * 2);
+      ctx.fill();
 
-    // Emoji
-    ctx.font = '50px serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(intruder.typeDef.emoji, 0, 0);
+      ctx.font = '50px serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(intruder.typeDef.emoji, 0, 0);
+    }
 
     // Boss indicator
     if (intruder.typeDef.isBoss) {
