@@ -139,14 +139,10 @@ export const WAVES = [
     spawnInterval: 2.2,
     maxActive: 2,
     pool: [
-      { type: 'avventuriero', weight: 0.5 },
-      { type: 'goblin', weight: 0.25 },
-      { type: 'cultista', weight: 0.15 },
-      { type: 'cespuglio', weight: 0.1 },
+      { type: 'avventuriero', weight: 0.8 },
+      { type: 'goblin', weight: 0.2 },
     ],
-    durationMultiplier: 1.2,
-    boss: 'rakuzen',
-    bossCount: 1,
+    durationMultiplier: 1.2, // intrusi visibili più a lungo
   },
   {
     act: 1,
@@ -329,7 +325,7 @@ export const DIALOGUE = {
 
   cultistaHit: 'Anche oggi i fedeli portano il tributo. Li sgombero con un buffetto. Loro lo chiamano contatto divino. Io lo chiamo lunedì.',
 
-  cespuglioHit: 'Sei tu. Ti riconoscerei tra mille arbusti. Ti perdono, cespuglio. Sto invecchiando.',
+  cespuglioHit: 'Sei tu. Ti riconoscerei tra mille arbusti. Perdonami, cespuglio. Sto invecchiando.',
 
   breathReady: 'Il veleno è carico. Uno sbuffo e tornano tutti maleducati in coda.',
   breathUsed: 'Sgombero generale. Lucidatevi altrove.',
